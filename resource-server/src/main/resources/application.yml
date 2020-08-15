@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: oauth2-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oauth2?useSSL=false&characterEncoding=utf8&useUnicode=true
+    username: root
+    password: syz951127
+server:
+  port: 8001
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+security:
+  oauth2:
+    client:
+      client-id: sucheon
+      client-secret: 123456
+      access-token-uri: http://localhost:8000/oauth/token
+      user-authorization-uri: http://localhost:8000/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:8000/oauth/check_token
